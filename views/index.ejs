@@ -1,2 +1,40 @@
 <!-- Include the header partial -->
 <%- include("partials/header.ejs") %>
+
+<div>
+    <h1>fill this up</h1>
+</div>
+
+
+
+<!-- JS Script for Title Animation -->
+<script>
+    const letters = "01*";
+
+    let interval = null;
+
+    document.querySelector(".title01").onmouseover = (event) => {
+        let iteration = 0;
+
+        clearInterval(interval);
+
+        interval = setInterval(() => {
+            event.target.innerText = event.target.innerText
+                .split("")
+                .map((letter, index) => {
+                    if (index < iteration) {
+                        return event.target.dataset.value[index];
+                    }
+
+                    return letters[Math.floor(Math.random() * 3)];
+                })
+                .join("");
+
+            if (iteration >= event.target.dataset.value.length) {
+                clearInterval(interval);
+            }
+
+            iteration += 1 / 3;
+        }, 30);
+    };
+</script>
