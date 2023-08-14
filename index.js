@@ -23,4 +23,6 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
-
+app.get("/uap", (req, res) => {
+    res.render("uap.ejs");
+});
