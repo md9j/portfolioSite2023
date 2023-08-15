@@ -43,17 +43,19 @@ p {
 }
 /* Set rules for how the map overlays (info box) will be displayed on the page. */
 .uapMap {
-    border: 1px solid #ccc; /* Add a bordered box around the uapMap */
+    border: 1px solid black; /* Add a bordered box around the uapMap */
     padding: 10px; /* Add some padding for spacing */
     margin-top: 20px; /* Add margin to separate from uapHeader */
 }
 .sightingsTitleBox {
-    border: 1px solid #ccc; /* Add a bordered box around the uapMap */
+    text-align: center;
+    border: 1px solid black; /* Add a bordered box around the uapMap */
     margin: 3px;
 }
 
 .sightingsDetail {
-    padding: 10px; /* Add some padding for spacing */
+    margin: .5rem; /* Add some margin for spacing */
+    font-size: 1rem;
 
 }
 
@@ -61,7 +63,7 @@ p {
     position: absolute;
     bottom: 0;
     right: 0;
-    background: #fff7fe;
+    background: #535252;
     margin-right: 20px;
     font-family: "Helvetica Neue", Arial, sans-serif;
     overflow: auto;
@@ -79,7 +81,7 @@ p {
 }
 
 .legend {
-    background-color: #fff7fe;
+    background-color: #535252;
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
