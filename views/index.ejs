@@ -1,16 +1,16 @@
 <!-- Include the header partial -->
 <%- include("partials/main/header.ejs") %>
 
-<div>
-    <h1>fill this up</h1>
-    <button id="uapLoad">UAP Page</button>
+<div class="face">
+    <img src="images/home/memojiFace.png" alt="memoji face">
 </div>
-<script>
-    document.getElementById('uapLoad').addEventListener('click', function() {
-        // Navigate to the new page
-        window.location.href = '/uap';
-    });
-</script>
+
+
+    <h2 class="more">Would you like to know more<span  class="blinking-text">?</span></h2>
+    <br/>
+    <h3><button id="uapLoad">UAP Page</button></h3>
+
+
 <!-- Include the footer partial -->
 <div>
 <%- include("partials/main/footer.ejs") %>
