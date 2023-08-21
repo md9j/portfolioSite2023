@@ -1,0 +1,53 @@
+<!-- Include the header partial -->
+<%- include("partials/main/header.ejs") %>
+
+<div>
+<h1 class="title01" data-value="Sudoku Solver">Sudoku Solver</h1>
+<p class="more">You are able view and download the sudoku solver file.</p>
+<p class="more">This java command line program is in the process of being</p>
+<p class="more">converted to a JS web app. Check back soon!</p>
+<br/>
+</div>
+
+<div class="more">
+<button id="viewSolver">View Sudoku Solver</button>
+<button id="downloadButton">Download Sudoku Solver Text File</button>
+</div>
+
+<% if(sudokuSolverContent){ %>
+    <div class="sudokuContainer">
+        <pre>
+        <%- sudokuSolverContent %>
+        </pre>
+    </div>
+<% } %>
+<script>
+    // View text file
+    document.getElementById('viewSolver').addEventListener('click', function() {
+      window.location.href = '/sudoku-solver'; // Redirect to Sudoku Solver view
+    });
+
+    document.getElementById('downloadButton').addEventListener('click', async function() {
+    try {
+        const response = await fetch('/download-text'); 
+        const textContent = await response.text();
+
+        const blob = new Blob([textContent], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'java-file.txt';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    } catch (error) {
+        console.error(error);
+    }
+    });
+</script>
+
+<!-- Include the footer partial -->
+<div><%- include("partials/main/footer.ejs") %></div>
