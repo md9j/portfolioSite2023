@@ -100,6 +100,7 @@ footer {
     font-weight: var(--fw-bold);
     color:#d65a31;
     text-decoration: none;
+    width: auto;
 }
 
 .footer__link:hover {
@@ -131,4 +132,15 @@ footer {
 .social-list__link {
     padding: .5em;
     color:#d65a31;
+}
+
+/* Sudoku */
+.sudokuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 20rem;
+    width: 80%;
+    height: 80%;
 }
