@@ -1,10 +1,10 @@
 # <img src="public/images/jbex05Orange.png" alt="Alt Text" width="50">
-portfolioSite2023
+# Portfolio Site 2023
 
 
 ## What's Happening?
 
-* This is where my new personal website (johnston-m.com) is being built.
+* This is where my personal website (johnston-m.com) is being re-built.
 * Once I have thrown a little more substance and styling in here it will replace the site's current content.
 * See ya soon!
 
@@ -12,6 +12,8 @@ portfolioSite2023
 ##### (currently)
 
 - `public/`: This directory contains static assets like stylesheets and images.
+    - `data/`: This directory contains text files.
+        - `sudokuSolver.txt`: Downloadable text file for the sudoku solver java code.
     - `images/`: This directory contains image files.
         - `jbex05Orange.png`
         - `jbexFaviconBlack.ico`
@@ -28,6 +30,7 @@ portfolioSite2023
             - `header.ejs`: Reusable header partial.
             - `uapMap.ejs`: Mapbox linked UAP map.
     - `index.ejs`: The main EJS view template.
+    - `sudoku.ejs`: The sudoku EJS view template.
     - `uap.ejs`: The UAP EJS view template.
 - `.gitignore`: This file tells git which files it should not track / not maintain a version history for.
 - `index.js`: This is the main server file for the project.
