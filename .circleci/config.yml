@@ -1,17 +1,23 @@
 version: 2.1
 jobs:
-  say-hello:
+  run-tests:
     docker:
-    - image: cimg/base:stable
+      - image: cimg/base:stable
     steps:
-    - checkout
-    - run:
-        name: Say hello
-        command: echo Hello, World!
+      - checkout
+      - run:
+          name: Say hello
+          command: echo Hello, World!
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+
 workflows:
   say-hello-workflow:
     jobs:
-    - say-hello
+      - run-tests
+
 
 # Original config.yml file:
 # # Use the latest 2.1 version of CircleCI pipeline process engine.
