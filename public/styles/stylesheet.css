@@ -79,8 +79,9 @@ h1 {
 /* Footer */
 .copyright {
     display: flex;
-    padding-right: 3%;
-    justify-content: flex-end;
+    margin-top: 1.5rem;
+    /* padding-right: 3%; */
+    justify-content: center; /*flex-end; uncomment when able to place in display bottom-right*/
 }
 
 footer {
