@@ -1,0 +1,27 @@
+name: UpdateDiscord
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get time
+        id: time
+        run: |
+          NOW=$(date +"%Y-%m-%d %H:%M:%S")
+          echo "now=${NOW}" >> $GITHUB_ENV
+        env:
+          TZ: America/Denver
+
+      - name: Discord Webhook Action
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
+          content: "Testing the webhook at ${{ env.now }}"
