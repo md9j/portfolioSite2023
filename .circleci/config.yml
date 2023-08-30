@@ -48,9 +48,14 @@ jobs:
     executor: node-executor
     steps:
       - checkout
+      - run:
+          name: Fetch Remote Host SSH Key
+          command: |
+            ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
             - "SHA256:7uf7L0U48h17LTUvUuskIO5nSxU1uykxaMj0zHl/qnA michael@johnston-m.com"
+            
       - run:
           name: Deploy to Linode VPS
           command: |
