@@ -2,7 +2,7 @@
 FROM node:14
 
 # Set the working directory within the container
-WORKDIR /usr/src/portfoliosite2023
+WORKDIR /usr/src/portfolio_site_2023
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
