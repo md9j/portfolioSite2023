@@ -24,4 +24,4 @@ jobs:
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
-          content: "Testing the webhook for branch update at ${{ env.now }}"
+          content: "Main branch update at ${{ env.now }}"
