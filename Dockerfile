@@ -1,5 +1,5 @@
 # Use a Node.js base image with a specific version
-FROM node:14
+FROM cimg/node:18.16.1
 
 # Set the working directory within the container
 WORKDIR /usr/src/portfolio_site_2023
