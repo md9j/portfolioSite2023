@@ -8,7 +8,9 @@ WORKDIR /usr/src/portfolio_site_2023
 COPY package*.json ./
 
 # Install app dependencies
+USER root
 RUN npm install
+USER circleci
 
 # Copy the rest of the application files to the container
 COPY . .
