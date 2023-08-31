@@ -57,9 +57,9 @@ jobs:
       - run:
           name: Deploy to Linode VPS
           command: |
-            ssh root@45.79.109.251 "docker stop portfolio_site_2023 || true"
-            ssh root@45.79.109.251 "docker rm portfolio_site_2023 || true"
-            ssh root@45.79.109.251 "docker run -d --name portfolio_site_2023 -p 4000:3000 portfolio_site_2023:latest"
+            docker stop portfolio_site_2023 || true
+            docker rm portfolio_site_2023 || true
+            docker run -d --name portfolio_site_2023 -p 4000:3000 portfolio_site_2023:latest
 
 workflows:
   build_test_and_deploy:
