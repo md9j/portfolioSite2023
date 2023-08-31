@@ -15,7 +15,10 @@ jobs:
           command: npm install
       - run:
           name: Build Docker Image
-          command: docker build -t portfolio_site_2023 .
+          command: |
+            service docker start
+            systemctl enable docker
+            docker build -t portfolio_site_2023 .
       - run:
           name: Creating Dummy Artifacts
           command: |
