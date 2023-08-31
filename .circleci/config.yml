@@ -51,10 +51,11 @@ jobs:
       - run:
           name: Fetch Remote Host SSH Key
           command: |
+            mkdir -p ~/.ssh
             ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:7uf7L0U48h17LTUvUuskIO5nSxU1uykxaMj0zHl/qnA michael@johnston-m.com"
+            - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
             
       - run:
           name: Deploy to Linode VPS
