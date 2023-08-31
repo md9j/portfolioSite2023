@@ -1,6 +1,6 @@
 version: 2.1
 
-working_directory: ~/portfolio_site_2023
+working_directory: /usr/src/portfolio_site_2023
 
 executors:
   node-executor:
@@ -51,8 +51,8 @@ jobs:
       - run:
           name: Fetch Remote Host SSH Key
           command: |
-            mkdir -p ~/.ssh
-            ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
+            mkdir -p /root/.ssh
+            ssh-keyscan -H 45.79.109.251 >> /root/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
             - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
