@@ -16,9 +16,11 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
+            USER root
             service docker start
             systemctl enable docker
             docker build -t portfolio_site_2023 .
+            USER circleci
       - run:
           name: Creating Dummy Artifacts
           command: |
