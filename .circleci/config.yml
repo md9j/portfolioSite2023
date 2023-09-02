@@ -12,9 +12,12 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run tests
           # command: npm run test
           command: echo Hello, World!!
-          name: Run tests
       - store_test_results:
           path: test-results
       - store_artifacts:
@@ -35,7 +38,7 @@ jobs:
       - attach_workspace:
           at: ~/project
       - run:
-          command: npm run deploy
+          command: rsync -avz -e "ssh -o StrictHostKeyChecking=no" ~/project/ root@45.79.109.251:~/portfolioSite
           name: Deploy app
 
 workflows:
