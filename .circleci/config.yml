@@ -35,7 +35,7 @@ jobs:
       - attach_workspace:
           at: ~/project
       - run:
-          command: rsync -avz -e "ssh -o StrictHostKeyChecking=no" ~/project/ root@45.79.109.251:~/portfolioSite
+          command: sudo rsync -avz -e "ssh -o StrictHostKeyChecking=no" ~/project/ root@45.79.109.251:~/portfolioSite
           name: Deploy app
 
 workflows:
