@@ -44,7 +44,7 @@ jobs:
             - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
       - run:
           command: |
-            /usr/bin/rsync -avz -e ~/project/ root@45.79.109.251:~/portfolioSite
+            /bin/rsync -avz -e ~/project/ root@45.79.109.251:~/portfolioSite
           name: Deploy app
 
 workflows:
