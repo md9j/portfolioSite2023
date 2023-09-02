@@ -36,8 +36,7 @@ jobs:
           at: ~/project
       - run:
           command: |
-            sudo apt install rsync
-            export PATH=$PATH:/usr/bin/rsync*
+            sudo apt-get install rsync
             rsync -avz -e "ssh -o StrictHostKeyChecking=no" ~/project/ root@45.79.109.251:~/portfolioSite
           name: Deploy app
 
