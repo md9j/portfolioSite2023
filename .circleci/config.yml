@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Start Node.js Server
           command: |
-            ssh root@45.79.109.251 "cd ~/portfolioSite && node --experimental-modules index.js"
+            ssh root@45.79.109.251 "cd ~/portfolioSite && node index.js"
 
 workflows:
   build_and_deploy:
