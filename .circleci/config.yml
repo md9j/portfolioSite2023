@@ -1,82 +1,49 @@
 version: 2.1
 
-executors:
-  node-executor:
-    docker:
-      - image: cimg/node:18.16.1
+orbs:
+  node: circleci/node@5.1.0
 
 jobs:
-  build:
-    executor: node-executor
+  build_and_test:
+    executor:
+      name: node/default
     steps:
       - checkout
+      - node/install-packages:
+          pkg-manager: npm
       - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Build Docker Image
-          command: |
-            sudo su root
-            sshpass -p "$PASSWORD"
-            service docker start
-            systemctl enable docker
-            docker build -t portfolio_site_2023 .
-      - run:
-          name: Creating Dummy Artifacts
-          command: |
-            echo "my artifact file" > /tmp/art-1;
-            mkdir /tmp/artifacts;
-            echo "my artifact files in a dir" > /tmp/artifacts/art-2;
-      - store_artifacts:
-          path: /tmp/art-1
-          destination: artifact-file
-      - store_artifacts:
-          path: /tmp/artifacts
-
-  test:
-    executor: node-executor
-    steps:
-      - checkout
-      - run:
-          name: Say hello
-          command: echo Hello, World!!
+          command: npm run test
+          name: Run tests
       - store_test_results:
           path: test-results
       - store_artifacts:
           path: test-results
+          destination: test-results
+      - run:
+          command: npm run build
+          name: Build app
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
 
   deploy:
-    executor: node-executor
+    executor:
+      name: node/default
     steps:
-      - checkout
+      - attach_workspace:
+          at: ~/project
       - run:
-          name: Fetch Remote Host SSH Key
-          command: |
-            ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
-      - add_ssh_keys:
-          fingerprints:
-            - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
-            
-      - run:
-          name: Deploy to Linode VPS
-          command: |
-            ssh -o StrictHostKeyChecking=no root@45.79.109.251
-            sshpass -p "$PASSWORD"
-            docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
-            docker pull "$DOCKER_USER"/portfolio_site_2023:latest
-            docker run -d -p 4000:3000 "$DOCKER_USER"/portfolio_site_2023:latest
-
+          command: npm run deploy
+          name: Deploy app
 
 workflows:
-  build_test_and_deploy:
+  build_and_deploy:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - build_and_test
       - deploy:
           requires:
-            - test
+            - build_and_test
           filters:
             branches:
               only: main
