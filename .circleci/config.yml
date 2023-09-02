@@ -36,7 +36,7 @@ jobs:
           at: ~/project
       - run:
           command: |
-            echo "$CIRCLECI_PASSWORD" | sudo -S /usr/bin/rsync -avz -e ~/project/ circleci@45.79.109.251:~/portfolioSite
+            echo '$CIRCLECI_PASSWORD' | sudo -S /usr/bin/rsync -avz -e ~/project/ circleci@45.79.109.251:~/portfolioSite
           name: Deploy app
 
 workflows:
