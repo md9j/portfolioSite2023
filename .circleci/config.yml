@@ -68,7 +68,7 @@ jobs:
             docker stop portfolio_site_2023
             docker rm portfolio_site_2023
             docker run -d --name portfolio_site_2023 -p 4000:3000 portfolio_site_2023:latest
-            \<<ENDSSH
+            \<< ENDSSH
 
 workflows:
   build_test_and_deploy:
