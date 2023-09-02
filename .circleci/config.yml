@@ -63,7 +63,7 @@ jobs:
             docker build . -t portfolio_site_2023:latest
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push mjohnst/portfolio2023:latest
-            >> sshpass -p "$PASSWORD" ssh root@45.79.109.251 << ENDSSH
+            sshpass -p "$PASSWORD" ssh root@45.79.109.251 << ENDSSH
             docker pull mjohnst/portfolio2023:latest
             docker stop portfolio_site_2023
             docker rm portfolio_site_2023
