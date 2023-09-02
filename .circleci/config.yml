@@ -47,7 +47,7 @@ jobs:
           name: Deploy app
       - run:
           name: Start Server
-          command: node ~/portfolioSite/index.js
+          command: node /home/root/portfolioSite/index.js
 
 workflows:
   build_and_deploy:
