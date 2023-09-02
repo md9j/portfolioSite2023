@@ -64,12 +64,10 @@ jobs:
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push mjohnst/portfolio2023:latest
             sshpass -p "$PASSWORD" ssh root@45.79.109.251
-            <<'ENDSSH'
             docker pull mjohnst/portfolio2023:latest
             docker stop portfolio_site_2023
             docker rm portfolio_site_2023
             docker run -d --name portfolio_site_2023 -p 4000:3000 portfolio_site_2023:latest
-            ENDSSH
 
 workflows:
   build_test_and_deploy:
