@@ -36,7 +36,7 @@ jobs:
           at: ~/project
       - run:
           command: |
-            rsync -avz -e "ssh -o StrictHostKeyChecking=no" ~/project/ root@45.79.109.251:~/portfolioSite
+            /usr/bin/rsync -avz -e "ssh -o StrictHostKeyChecking=no" ~/project/ root@45.79.109.251:~/portfolioSite
           name: Deploy app
 
 workflows:
