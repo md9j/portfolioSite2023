@@ -60,15 +60,12 @@ jobs:
       - run:
           name: Deploy to Linode VPS
           command: |
-            docker build . -t portfolio_site_2023:latest
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push mjohnst/portfolio2023:latest
-            sshpass -p "$PASSWORD" ssh root@45.79.109.251 <<'ENDSSH'
-            docker pull mjohnst/portfolio2023:latest
-            docker stop portfolio_site_2023
-            docker rm portfolio_site_2023
-            docker run -d --name portfolio_site_2023 -p 4000:3000 portfolio_site_2023:latest
-            \>>ENDSSH
+            ssh -o StrictHostKeyChecking=no root@45.79.109.251
+            sshpass -p "$PASSWORD"
+            docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+            docker pull "$DOCKER_USER"/portfolio_site_2023:latest
+            docker run -d -p 4000:3000 "$DOCKER_USER"/portfolio_site_2023:latest
+
 
 workflows:
   build_test_and_deploy:
