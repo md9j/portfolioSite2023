@@ -43,12 +43,12 @@ jobs:
           fingerprints:
             - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
       - run:
-          command: scp -o StrictHostKeyChecking=no -r ~/project/* root@45.79.109.251:/root/portfolioSite/
           name: Deploy app
+          command: scp -o StrictHostKeyChecking=no -r ~/project/* circleci@45.79.109.251:/circleci/portfolioSite/
       - run:
           name: Start Server
           command: |
-            cd /root/portfolioSite/
+            cd /circleci/portfolioSite/
             node index.js
 workflows:
   build_and_deploy:
