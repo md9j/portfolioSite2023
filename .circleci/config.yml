@@ -44,11 +44,11 @@ jobs:
             - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
       - run:
           name: Deploy app
-          command: scp -o StrictHostKeyChecking=no -r ~/project/* circleci@45.79.109.251:/home/circleci/portfolioSite
+          command: scp -o StrictHostKeyChecking=no -r ~/project/* circleci@45.79.109.251:/home/circleci/portfolioSite/
       - run:
           name: Start Server
           command: |
-            cd /home/circleci/portfolioSite
+            cd /home/circleci/portfolioSite/
             node index.js
 workflows:
   build_and_deploy:
