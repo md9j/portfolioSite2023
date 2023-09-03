@@ -49,7 +49,8 @@ jobs:
           name: Start Server
           command: |
             ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
-            node /home/circleci/portfolioSite/index.js
+            cd /home/circleci/portfolioSite/
+            node index.js
 workflows:
   build_and_deploy:
     jobs:
