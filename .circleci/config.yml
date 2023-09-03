@@ -48,8 +48,7 @@ jobs:
       - run:
           name: Start Server
           command: |
-            cd ~/home/circleci/portfolioSite/
-            node index.js
+            node /home/circleci/portfolioSite/index.js
 workflows:
   build_and_deploy:
     jobs:
