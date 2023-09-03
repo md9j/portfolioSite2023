@@ -45,7 +45,11 @@ jobs:
       - run:
           command: scp -o StrictHostKeyChecking=no -r ~/project/* root@45.79.109.251:/root/portfolioSite/
           name: Deploy app
-
+      - run:
+          name: Start Server
+          command: |
+            cd /root/portfolioSite/
+            node index.js
 workflows:
   build_and_deploy:
     jobs:
