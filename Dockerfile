@@ -1,22 +1,14 @@
-# Use a Node.js base image with a specific version
-FROM cimg/node:18.16.1
+# select baseimage
+FROM node:18.17.1-alpine 
 
-# Set the working directory within the container
-WORKDIR /usr/src/portfolio_site_2023
+# copy localproject files into container, create portfolio folder if needed
+COPY . /portfolio/
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
+# set working directory, "cd" into portfolio folder
+WORKDIR /portfolio
 
-# Install app dependencies
-USER root
+# install dependencies
 RUN npm install
-USER circleci
 
-# Copy the rest of the application files to the container
-COPY . .
-
-# Expose the port that your Express app will listen on
-EXPOSE 3000
-
-# Command to start your Express app
-CMD ["node", "index.js"]
+# last command to run, execute container startup
+CMD ["node", "index.js"] 
