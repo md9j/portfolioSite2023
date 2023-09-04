@@ -22,7 +22,7 @@ jobs:
           name: Build Docker Image
           command: |
             # Specify the correct path to your Dockerfile and context (if needed)
-            docker build -t portfolio2023:2.0.0 .
+            docker build -t mjohnst/portfolio2023:2.0.0 .
             echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
             # Specify the correct registry URL
             docker image push mjohnst/portfolio2023:2.0.0
