@@ -20,9 +20,9 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t portfolio2023 -t mjohnst/portfolio2023:2.0.0
+            docker build -t portfolio2023:2.0.0 .
             echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-            docker push mjohnst/portfolio2023:2.0.0
+            docker image push mjohnst/portfolio2023:2.0.0
 
 workflows:
   update_portfolio:
