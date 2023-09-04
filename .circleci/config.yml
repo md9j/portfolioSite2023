@@ -1,55 +1,36 @@
 version: 2.1
 
-executors:
-  node-executor:
-      docker:
-        - image: cimg/node:18.16.1
-
 jobs:
-  build_and_deploy:
-    executor: node-executor
+  build_and_test:
+    docker:
+      - image: cimg/node:12.18.3
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: |
+            npm install
+  build_docker_image:
+    docker:
+      - image: cimg/node:12.18.3
     steps:
       - checkout
       - setup_remote_docker:
-          version: 24.0.5
+          docker_layer_caching: true
       - run:
           name: Build Docker Image
           command: |
-            docker build -t portfolio-img:2.0.0 .
-      - run:
-          name: Push Docker Image to Linode
-          command: |
-            ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
-      - add_ssh_keys:
-          fingerprints:
-            - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
-      - run:
-          name: Push Docker Image to Linode
-          command: |
-            docker tag portfolio-img:2.0.0 45.79.109.251/portfolio-img:2.0.0 
-            # Replace with your Docker image and registry details
-            docker push registry.example.com/portfolio-img:2.0.0
-      - run:
-          name: Stop and Remove Existing Container
-          command: |
-            # Replace the following lines with commands to stop and remove the existing container, if any
-            docker stop portfolio || true
-            docker rm portfolio || true
-      - run:
-          name: Remove Old Docker Image
-          command: |
-            # Remove any Docker image with the specified name prefix
-            docker rmi $(docker images -q '45.79.109.251/portfolio-img:*') || true
-      - run:
-          name: Start New Container with Updated Image
-          command: |
-            # Start a new container with the updated image
-            docker run -d --name portfolio -p 3000:3000 45.79.109.251/portfolio-img:2.0.0
-          
+            docker build -t portfolio-img:2.0.0 mjohnst/portfolio2023/portfolio-img:2.0.0
+            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+            docker push mjohnst/portfolio2023/portfolio-img:2.0.0
+            
 workflows:
   update_portfolio:
     jobs:
-      - build_and_deploy:
+      - build_and_test
+      - build_docker_image:
+          requires:
+            - build_and_test
           filters:
             branches:
-              only: main
+              only: master
