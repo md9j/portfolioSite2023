@@ -1,12 +1,9 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@5.1.0
-
 jobs:
   build_and_deploy:
     docker:
-      - image: node:18.17.1-alpine 
+      - image: cimg/node:18.17.1
     steps:
       - checkout
       - setup_remote_docker:
