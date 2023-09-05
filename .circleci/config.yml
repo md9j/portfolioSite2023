@@ -25,7 +25,8 @@ jobs:
             echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
             docker image push mjohnst/portfolio2023:2.0.0
             docker image push mjohnst/portfolio2023:latest
-            
+
+# changed permissions on script         
   deploy:
     docker:
       - image: cimg/python:3.8
