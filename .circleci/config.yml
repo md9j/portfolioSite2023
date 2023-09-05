@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t mjohnst/portfolio2023:2.0.0 .
+            docker build -t mjohnst/portfolio2023:2.0.0 -t mjohnst/portfolio2023:latest .
             echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
             docker image push mjohnst/portfolio2023:2.0.0
 
@@ -29,4 +29,9 @@ workflows:
   update_portfolio:
     jobs:
       - build_and_test
-      - build_docker_image
+      - build_docker_image:
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only: deploy_live
