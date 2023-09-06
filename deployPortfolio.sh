@@ -1,16 +1,6 @@
 #!/bin/bash
 
-DOCKER_USERNAME="$DOCKER_USER"
-DOCKER_PASSWORD="$DOCKER_PASS"
-DOCKER_REGISTRY="$DOCKER_REGISTRY"
-IMAGE_NAME="$IMAGE_NAME"
-CONTAINER_NAME="$CONTAINER_NAME"
-
-docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" "$DOCKER_REGISTRY"
-
-docker pull "$DOCKER_REGISTRY/$IMAGE_NAME:latest"
-
-docker stop "$CONTAINER_NAME" || true
-docker rm "$CONTAINER_NAME" || true
-
-docker run -d --name "$CONTAINER_NAME" -p 3000:3000 "$DOCKER_REGISTRY/$IMAGE_NAME:latest"
+ssh root@45.79.109.251 'bash -s' <<EOF
+docker pull mjohnst/portfolio2023:latest
+docker run -d --name portfolio -p 3000:3000 mjohnst/portfolio2023:latest
+EOF
