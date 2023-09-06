@@ -1,5 +1,5 @@
 # select baseimage
-FROM node:12.18.3
+FROM node:18.17.1-alpine 
 
 # copy localproject files into container, create portfolio folder if needed
 COPY . /portfolio/
