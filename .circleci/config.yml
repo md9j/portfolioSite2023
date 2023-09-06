@@ -38,7 +38,7 @@ jobs:
             ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
-          - $SSH_CCI_LINODE
+          - $NEW_SSH_CCI_LINODE
       - run:
           name: Deploy to Linode VPS
           command: |
