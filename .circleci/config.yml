@@ -34,7 +34,7 @@ jobs:
     - run:
         name: Fetch Remote Host SSH Key
         command: |
-          ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
+          ssh-keyscan -H 45.79.109.251 >> .ssh/known_hosts
     - add_ssh_keys:
         fingerprints:
           - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
