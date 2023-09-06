@@ -33,6 +33,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Add Linode VPS host key to known_hosts
+          command: |
+            ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+          - $SSH_KEY_FINGERPRINT
+      - run:
           name: Deploy to Linode VPS
           command: |
             scp deploy.sh root@45.79.109.251:/tmp/
