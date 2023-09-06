@@ -22,7 +22,7 @@ jobs:
           name: Build Docker Image
           command: |
             docker build -t mjohnst/portfolio2023:2.0.0 -t mjohnst/portfolio2023:latest .
-            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             docker image push mjohnst/portfolio2023:2.0.0
             docker image push mjohnst/portfolio2023:latest
 
