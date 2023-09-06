@@ -1,6 +1,12 @@
 #!/bin/bash
 
 ssh root@45.79.109.251 'bash -s' <<EOF
-docker pull mjohnst/portfolio2023:latest
-docker run -d --name portfolio -p 3000:3000 mjohnst/portfolio2023:latest
+docker login -u "$DOCKER_USERNAME -p $DOCKER_PASSWORD $DOCKER_REGISTRY
+
+docker pull $DOCKER_REGISTRY/$DOCKER_IMAGE_PORTFOLIO:latest
+
+docker stop $DOCKER_CONTAINER_PORTFOLIO || true
+docker rm $DOCKER_CONTAINER_PORTFOLIO || true
+
+docker run -d --name $DOCKER_CONTAINER_PORTFOLIO  -p 443:3000 $DOCKER_REGISTRY/$DOCKER_IMAGE_PORTFOLIO:latest 
 EOF
