@@ -43,7 +43,7 @@ jobs:
           name: Deploy to Linode VPS
           command: |
             scp deploy.sh root@45.79.109.251:/tmp/
-            ssh root@45.79.109.251 'bash /tmp/deploy.sh'
+            ssh root@45.79.109.251 'bash /tmp/deployPortfolio.sh'
 
 workflows:
   update_portfolio:
