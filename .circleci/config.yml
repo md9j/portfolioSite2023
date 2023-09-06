@@ -32,10 +32,17 @@ jobs:
       - image: cimg/python:3.8
     steps:
     - run:
+        name: Fetch Remote Host SSH Key
+        command: |
+          ssh-keyscan -H 45.79.109.251 >> ~/.ssh/known_hosts
+    - add_ssh_keys:
+        fingerprints:
+          - "b3:f8:90:03:86:2c:83:49:6b:27:e0:e8:72:18:ae:a8"
+    - run:
           name: Deploy to Linode VPS
           command: |
-            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null deployPortfolio.sh root@45.79.109.251:/tmp/
-            ssh root@45.79.109.251 'bash -s' < /tmp/deployPortfolio.sh
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null deployPortfolio.sh root@45.79.109.251:/
+            ssh root@45.79.109.251 'bash -s' < deployPortfolio.sh
 
 workflows:
   update_portfolio:
