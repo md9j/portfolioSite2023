@@ -1,0 +1,31 @@
+<nav>
+  <div class="header-logo-image">
+    <a href="/">
+      <img src="images/jbex05Orange.png" alt="mJOHNSTON">
+    </a>
+  </div>
+  <div class="navbar">
+      <div class="menu">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+      </div>
+      <div class="toggle-button">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+  </div>
+</nav>
+
+<script>
+
+  const toggleButton = document.querySelector('.toggle-button');
+  const menu = document.querySelector('.menu');
+
+  toggleButton.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+</script>
