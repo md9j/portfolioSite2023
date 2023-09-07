@@ -52,9 +52,9 @@ workflows:
       - build_docker_image:
           requires:
             - build_and_test
-          # filters:
-          #   branches:
-          #     only: deploy_live
+          filters:
+            branches:
+              only: deploy_live
       - deploy:
           requires:
             - build_docker_image
