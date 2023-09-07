@@ -21,7 +21,9 @@ h1 {
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding-top: 10rem;
+    margin-top: 7rem;
+    /* padding-top: 10rem; */
+    border-radius: 5rem;
 }
 
 .title01 {
@@ -29,6 +31,7 @@ h1 {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     text-align: center;
     text-transform: uppercase;
@@ -41,6 +44,11 @@ h1 {
     background-color: white;
     color: black;
     }
+
+.tagline {
+    text-align: center;
+    font-size: 1.3rem;
+}
 
 /* Body */
 
@@ -77,19 +85,18 @@ h1 {
 
 
 /* Footer */
+footer {
+    font-family: 'Hanken Grotesk', sans-serif;
+    margin-top: 5%;
+    min-height: 7rem;
+    width: 100%;
+}
+
 .copyright {
     display: flex;
     margin-top: 1.5rem;
     /* padding-right: 3%; */
     justify-content: center; /*flex-end; uncomment when able to place in display bottom-right*/
-}
-
-footer {
-    font-family: 'Hanken Grotesk', sans-serif;
-
-    margin-top: 5rem;
-    min-height: 7rem;
-    width: 100%;
 }
 
 .footer a { 
@@ -101,7 +108,7 @@ footer {
     display: flex;
     justify-content: center;
     font-weight: var(--fw-bold);
-    color:#d65a31;
+    color:#ffffff;
     text-decoration: none;
     width: auto;
 }
@@ -119,7 +126,7 @@ footer {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 2em 0 0;
+    margin: 1rem 0 0;
     padding: 0;
 }
 
@@ -134,7 +141,7 @@ footer {
 
 .social-list__link {
     padding: .5em;
-    color:#d65a31;
+    color:#ffffff;
 }
 
 /* Sudoku */
