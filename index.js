@@ -31,7 +31,7 @@ app.listen(port, () => {
     console.log(`It's me, port ${port}, I'm the listening port it's me`);
 });
 
-// Route handlers
+// Route handlers ********************
 app.get('/', (req, res) => {
     res.render('index.ejs');
 });
@@ -39,6 +39,11 @@ app.get('/', (req, res) => {
 // UAP route
 app.get('/uap', (req, res) => {
     res.render('uap.ejs');
+});
+
+// Pipeline route
+app.get('/pipeline', (req, res) => {
+    res.render('pipeline.ejs');
 });
 
 // Sudoku route
