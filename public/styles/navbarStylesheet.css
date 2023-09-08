@@ -1,4 +1,5 @@
 nav {
+  font-family: 'Hanken Grotesk', sans-serif;
   background-color: none;
   color: #fff;
   width: 100%;
@@ -11,7 +12,7 @@ nav {
   text-align: center;
   justify-content: center;
   align-content: center;
-  width: 70%;
+  width: 80%;
   background-color: none;
 }
 
@@ -66,7 +67,7 @@ nav {
   .menu {
       display: none;
       flex-direction: column;
-      background-color: #333;
+      background-color: none;
       position: absolute;
       top: 60px;
       left: 0;
