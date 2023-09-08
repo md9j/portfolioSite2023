@@ -7,21 +7,15 @@ body {
     place-items: center;
 }
 
-h1 {
-    font-family: "Space Mono", monospace;
-    font-size: clamp(3rem, 10vw, 10rem);
-    color: white;
-    padding: 0rem clamp(1rem, 2vw, 3rem);
-    border-radius: clamp(0.4rem, 0.75vw, 1rem);
-}
-
 /* Title */
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding-top: 10rem;
+    margin-top: 7rem;
+    /* padding-top: 10rem; */
+    border-radius: 5rem;
 }
 
 .title01 {
@@ -29,6 +23,7 @@ h1 {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     text-align: center;
     text-transform: uppercase;
@@ -42,6 +37,30 @@ h1 {
     color: black;
     }
 
+.tagline {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.pageTitle {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: clamp(3rem, 10vw, 10rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+.title02 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: clamp(3rem, 10vw, 10rem);
+    margin: auto auto 0 auto;
+}
 /* Body */
 
 .face {
@@ -52,9 +71,13 @@ h1 {
     padding-top: 20rem;
 }
 
-/* Style for the blinking question mark */
-.blinking-text {
-    animation: blink-animation 1s infinite;
+/* Style for the blinking text */
+.blinking-text-1 {
+    animation: blink-animation 1.5s infinite;
+}
+
+.blinking-text-2 {
+    animation: blink-animation 2s infinite;
 }
 
 /* Keyframes for the blinking animation */
@@ -75,21 +98,100 @@ h1 {
     text-align: center;
 }
 
+.button-container-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.button-container-projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.extra-top-padding {
+    padding-top: 3rem;
+}
+
+/* Buttons */
+button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: white solid 1px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 55% 5% 5%;
+}
+.custom-btn {
+    width: 50px;
+    height: 40px;
+    color: #fff;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 
+        2px 2px 2px 0px rgba(0, 0, 0, 0.5),
+        7px 7px 20px 0px rgba(0, 0, 0, 0.5),
+        4px 4px 5px 0px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+.btn-2 {
+    width: fit-content;
+    border: none;
+    box-shadow:
+    -4px -4px 6px 0 rgba(116, 125, 136, .5)
+}
+.btn-2:before {
+    height: 0%;
+    width: 2px;
+    
+}
+.btn-2:hover {
+    box-shadow:
+    4px 4px 6px 0 rgba(214, 90, 49, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
 
 /* Footer */
+footer {
+    font-family: 'Hanken Grotesk', sans-serif;
+    margin-top: 5%;
+    min-height: 7rem;
+    width: 100%;
+}
+
 .copyright {
     display: flex;
     margin-top: 1.5rem;
     /* padding-right: 3%; */
     justify-content: center; /*flex-end; uncomment when able to place in display bottom-right*/
-}
-
-footer {
-    font-family: 'Hanken Grotesk', sans-serif;
-
-    margin-top: 5rem;
-    min-height: 7rem;
-    width: 100%;
 }
 
 .footer a { 
@@ -101,7 +203,7 @@ footer {
     display: flex;
     justify-content: center;
     font-weight: var(--fw-bold);
-    color:#d65a31;
+    color:#ffffff;
     text-decoration: none;
     width: auto;
 }
@@ -119,7 +221,7 @@ footer {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 2em 0 0;
+    margin: 1rem 0 0;
     padding: 0;
 }
 
@@ -134,7 +236,7 @@ footer {
 
 .social-list__link {
     padding: .5em;
-    color:#d65a31;
+    color:#ffffff;
 }
 
 /* Sudoku */
@@ -146,4 +248,17 @@ footer {
     padding-top: 20rem;
     width: 80%;
     height: 80%;
+}
+
+/* Pipeline */
+.piplineMapContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.5rem;
+}
+
+.pipelineMap {
+    justify-content: center;
+    width: 80%;
 }

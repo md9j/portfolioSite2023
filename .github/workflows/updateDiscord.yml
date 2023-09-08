@@ -3,7 +3,7 @@ name: UpdateDiscord
 on:
   push:
     branches:
-      - main
+      - deploy_live
 
 jobs:
   message:
@@ -24,4 +24,5 @@ jobs:
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
-          content: "Main branch update at ${{ env.now }}"
+          content: "Updates arrived at ${{ env.now }}, check it out and see what's changed!"
+

@@ -109,20 +109,16 @@ p {
 /* Footer */
 footer {
     font-family: 'Hanken Grotesk', sans-serif;
-    margin-top: 5rem;
+    margin-top: 5%;
     min-height: 7rem;
     width: 100%;
 }
 
-.title01:hover {
-    background-color: white;
-    color: black;
-    }
-
 .copyright {
     display: flex;
-    padding-right: 3%;
-    justify-content: flex-end;
+    margin-top: 1.5rem;
+    /* padding-right: 3%; */
+    justify-content: center; /*flex-end; uncomment when able to place in display bottom-right*/
 }
 
 .footer a { 
@@ -134,8 +130,9 @@ footer {
     display: flex;
     justify-content: center;
     font-weight: var(--fw-bold);
-    color:#d65a31;
+    color:#ffffff;
     text-decoration: none;
+    width: auto;
 }
 
 .footer__link:hover {
@@ -151,7 +148,7 @@ footer {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 2em 0 0;
+    margin: 1rem 0 0;
     padding: 0;
 }
 
@@ -166,5 +163,5 @@ footer {
 
 .social-list__link {
     padding: .5em;
-    color:#d65a31;
+    color:#ffffff;
 }

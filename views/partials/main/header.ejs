@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<link rel="stylesheet" href="styles/stylesheet.css" />
+		<link rel="stylesheet" href="styles/navbarStylesheet.css" />
+
 
 		<!-- bootstrap -->
 		<script
@@ -26,45 +28,7 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" />
 	</head>
-	<a href="https://johnston-m.com/">
-		<img class="logo" src="images/jbex05Orange.png" alt="jbex Ibex"
-	/></a>
-	<h1 class="title01" data-value="mJOHNSTON">mJOHNSTON</h1>
-	<h3 class="tagline">... let's build it out!</h3>
-
-	<!-- JS Script for Title Animation -->
-	<script>
-		const letters = "01*";
-
-		let interval = null;
-
-		document.querySelector(".title01").onmouseover = (event) => {
-			let iteration = 0;
-
-			clearInterval(interval);
-
-			interval = setInterval(() => {
-				event.target.innerText = event.target.innerText
-					.split("")
-					.map((letter, index) => {
-						if (index < iteration) {
-							return event.target.dataset.value[index];
-						}
-
-						return letters[Math.floor(Math.random() * 3)];
-					})
-					.join("");
-
-				if (iteration >= event.target.dataset.value.length) {
-					clearInterval(interval);
-				}
-
-				iteration += 1 / 3;
-			}, 40);
-		};
-	</script>
-
+<!-- Include the navbar partial -->
+<%- include("navbar.ejs") %>
 	<body>
-		<main></main>
-	</body>
-</html>
+		<main>
