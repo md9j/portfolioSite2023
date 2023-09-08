@@ -1,5 +1,10 @@
         </main>
         <script>
+            document.getElementById('pipeline').addEventListener('click', function() {
+                // Navigate to the pipeline page
+                window.location.href = '/pipeline';
+            });
+
             document.getElementById('uapLoad').addEventListener('click', function() {
                 // Navigate to the UAP page
                 window.location.href = '/uap';
@@ -15,15 +20,26 @@
                 window.location.href = '/apiAuthsSecrets';
             }); 
 
-            document.getElementById('pipeline').addEventListener('click', function() {
+            document.getElementById('resume').addEventListener('click', function() {
                 // Navigate to the pipeline page
-                window.location.href = '/pipeline';
+                window.location.href = 'inProgress';
+            });
+            
+            document.getElementById('academic').addEventListener('click', function() {
+                // Navigate to the pipeline page
+                window.location.href = 'inProgress';
+            });
+
+            document.getElementById('military').addEventListener('click', function() {
+                // Navigate to the pipeline page
+                window.location.href = 'inProgress';
             });
 
             document.getElementById('home-btn').addEventListener('click', function() {
                 // Navigate to the home page
                 window.location.href = '/';
             });
+
         </script>
         
     </body>
