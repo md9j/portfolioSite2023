@@ -46,6 +46,11 @@ app.get('/pipeline', (req, res) => {
     res.render('pipeline.ejs');
 });
 
+// In Progress route
+app.get('/inProgress', (req, res) => {
+    res.render('inProgress.ejs');
+});
+
 // Sudoku route
 app.get('/sudoku', (req, res) => {
     res.render('sudoku.ejs', {sudokuSolverContent});
