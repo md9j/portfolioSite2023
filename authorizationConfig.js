@@ -1,4 +1,4 @@
-export const username = 'gParm';
-export const password = 'lookatbanner';
-export const apiKey = '00b440a1-53b4-4c49-b4f2-eacae8933f40';
-export const bearerToken = 'b3a01b3d-9e19-487a-b928-ef2da04992c5';
+export const username = 'portfolio';
+export const password = 'showMEtheSECRETS';
+export const apiKey = 'd23fee48-fdd1-444d-a7ac-7d98c6a19f35';
+export const bearerToken = '98608e97-7b5e-4d6d-b333-00ac43746ac2';
