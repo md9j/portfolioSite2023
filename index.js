@@ -36,22 +36,51 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
-// UAP route
+// Resume route *******************
+app.get('/resume', (req, res) => {
+    res.render('resume.ejs');
+});
+
+app.get('/download-resume', (req, res) => {
+    const filePath = __dirname + '/public/documents/JohnstonResume.pdf';
+    res.download(filePath);
+});
+
+// Academic route *******************
+app.get('/academic', (req, res) => {
+    res.render('academic.ejs');
+});
+app.get('/download-academic', (req, res) => {
+    const filePath = __dirname + '/public/documents/JohnstonResume.pdf';
+    res.download(filePath);
+});
+
+// Military route *******************
+app.get('/military', (req, res) => {
+    res.render('military.ejs');
+});
+
+app.get('/download-military', (req, res) => {
+    const filePath = __dirname + '/public/documents/JohnstonResume.pdf';
+    res.download(filePath);
+});
+
+// UAP route *******************
 app.get('/uap', (req, res) => {
     res.render('uap.ejs');
 });
 
-// Pipeline route
+// Pipeline route *******************
 app.get('/pipeline', (req, res) => {
     res.render('pipeline.ejs');
 });
 
-// In Progress route
+// In Progress route *******************
 app.get('/inProgress', (req, res) => {
     res.render('inProgress.ejs');
 });
 
-// Sudoku route
+// Sudoku route *******************
 app.get('/sudoku', (req, res) => {
     res.render('sudoku.ejs', {sudokuSolverContent});
 });
@@ -80,7 +109,7 @@ app.get('/download-text', async (req, res) => {
     }
 });
 
-// API routes
+// API routes *******************
 app.get("/apiAuthsSecrets", (req, res) => {
     res.render("apiAuthIndex.ejs", { content: null, error: null, initialModalShown: false });
 });
