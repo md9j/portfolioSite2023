@@ -239,6 +239,43 @@ footer {
     color:#ffffff;
 }
 
+/* Resume, Academic, Military*/
+.documentContainer {
+    justify-content: center;
+    align-items: left;
+    margin: auto;
+    padding-top: 3rem;
+    width: 80%;
+    height: 80%;
+}
+
+.documentContainer p {
+    padding-left: 1rem;
+}
+
+.experience-column{
+    padding-left: 1rem;
+    text-align: left;
+    align-content: left;
+    justify-content: left;
+    justify-items: left;
+    width: 70%;
+}
+.year-column {
+    padding-left: 1rem;
+    text-align: center;
+    align-content: right;
+    vertical-align: text-top;
+    justify-content: right;
+    width: 15%;
+}
+
+.footnote {
+    font-size: 0.75rem;
+    text-align: left;
+    margin-top: 1rem;
+}
+
 /* Sudoku */
 .sudokuContainer {
     display: flex;
