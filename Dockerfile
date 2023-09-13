@@ -10,5 +10,8 @@ WORKDIR /portfolio
 # install dependencies
 RUN npm install
 
+# link the local package (unit-http)
+RUN npm link unit-http
+
 # last command to run, execute container startup
 CMD ["node", "index.js"] 
