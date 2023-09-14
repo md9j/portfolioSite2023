@@ -41,9 +41,9 @@ function createMarkdownList(contents, depth = 0) {
       const indent = '  '.repeat(depth); // Adjust the indentation based on depth
       if (content.type === 'directory') {
         const subList = createMarkdownList(content.contents, depth + 1);
-        return `${indent}${index + 1}. **\`[${content.name}]\`** \n${subList}`;
+        return `${indent}${index + 1}. **[${content.name}]** \n${subList}`;
       } else {
-        return `${indent}${index + 1}. \`${content.name}\` `;
+        return `${indent}${index + 1}. ${content.name} `;
       }
     })
     .join('\n');
