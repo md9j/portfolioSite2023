@@ -43,7 +43,7 @@ function createMarkdownList(contents, depth = 0) {
         const subList = createMarkdownList(content.contents, depth + 1);
         return `${indent}${index + 1}. ** \`\[${content.name}]\`\ ** \n${subList}`;
       } else {
-        return `${indent}${index + 1}. \`\${content.name}\`\ `;
+        return `${indent}${index + 1}. \`\ ${content.name}\`\ `;
       }
     })
     .join('\n');
