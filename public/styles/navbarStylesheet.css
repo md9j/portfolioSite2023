@@ -61,6 +61,92 @@ nav {
   width: 25px;
   background-color: #fff;
   margin: 3px 0;
+  cursor: pointer;
+}
+
+/* Modal */
+#description-modal {
+  font-family: 'Hanken Grotesk', sans-serif;
+  display: none;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-content {
+  text-align: center;
+  background-color: #343a3f99;
+  margin: 15% auto;
+  padding: 20px;
+  border: white solid 1px;
+  border-radius: 1.5rem;
+  width: 70%;
+  height: 65%;
+  backdrop-filter: blur(3px);
+}
+
+.modal-title {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+.modal-sub-title {
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+.modal-link {
+  font-size: 16px; /* Adjust the font size as needed */
+  text-decoration: none;
+  color: rgb(255, 255, 255); /* Change the link color as needed */
+  margin-top: 2%;
+}
+
+.modal-link:hover {
+  color: #d65a31;
+}
+
+.list {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.contact_list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.contact_list_item {
+  width: 10%; /* 15% the size of the description-modal div */
+  margin: 2% 5%; /* Adjust the margin as needed */
+}
+
+.contact_list_item img {
+  width: 100%;
+  height: auto;
+}
+
+.contact_list_item:hover {
+  opacity: 0.7;
+}
+
+#close-btn {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: rgb(200, 11, 11);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -80,11 +166,4 @@ nav {
       display: flex;
   }
 
-  .toggle-button {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      cursor: pointer;
-      padding: 10px 20px;
-  }
 }

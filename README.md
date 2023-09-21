@@ -11,29 +11,64 @@
 ## File Structure 
 ##### (currently)
 
-- `public/`: This directory contains static assets like stylesheets and images.
-    - `data/`: This directory contains text files.
-        - `sudokuSolver.txt`: Downloadable text file for the sudoku solver java code.
-    - `images/`: This directory contains image files.
-        - `jbex05Orange.png`
-        - `jbexFaviconBlack.ico`
-    - `styles/`: This directory contains CSS files.
-        - `stylesheet.css`: The main stylesheet for the project.
-        - `uapStylesheet.css`: The UAP page stylesheet.
-- `views/`: This directory contains EJS view templates.
-    - `partials/`: This directory contains reusable partial templates.
-        - `main`: main pages partials.
-            - `footer.ejs`: Reusable footer partial.
-            - `header.ejs`: Reusable header partial.
-        - `uap`: uap page partials.
-            - `footer.ejs`: Reusable footer partial.
-            - `header.ejs`: Reusable header partial.
-            - `uapMap.ejs`: Mapbox linked UAP map.
-    - `index.ejs`: The main EJS view template.
-    - `sudoku.ejs`: The sudoku EJS view template.
-    - `uap.ejs`: The UAP EJS view template.
-- `.gitignore`: This file tells git which files it should not track / not maintain a version history for.
-- `index.js`: This is the main server file for the project.
-- `package-lock.json`: This is an automatically generated file that locks the versions of installed npm packages.
-- `package.json`: This file contains metadata about the project and its dependencies.
-- `README.md`: This is the main README file that provides information about the project.
+### Portfolio Site 2023
+<!-- START: contents list -->
+- `.gitignore`
+- `Dockerfile`
+- `README.md`
+- `authorizationConfig.js`
+- `deployPortfolio.sh`
+- `generateDirectoryContentList.js`
+- `index.js`
+- `package-lock.json`
+- `package.json`
+- **[public]**
+  - **[data]**
+    - `sudokuSolver.txt`
+  - **[documents]**
+    - `BiographicalSketchJohnstonMichaelNoPII.pdf`
+    - `Johnston-M-UCCS-CeDiploma.pdf`
+    - `JohnstonMichaelCV.pdf`
+    - `JohnstonResume.pdf`
+  - **[images]**
+    - `Linkedin-logo.png`
+    - `github-mark.png`
+    - **[home]**
+      - `ibexBoredChair02.jpg`
+      - `memojiFace.png`
+    - `ibexSuitChair.jpg`
+    - `ibexSuitChairRelax.jpg`
+    - `jbex05Orange.png`
+    - `jbexFaviconBlack.ico`
+    - `manReactsT0Secret.jpg`
+    - `portfolioPipeline.svg`
+    - `portfolioPipelineWhiteLine.svg`
+  - **[scripts]**
+    - `modal.js`
+  - **[styles]**
+    - `apiAuthMain.css`
+    - **[fonts]**
+      - `momsTypewriter.ttf`
+    - `navbarStylesheet.css`
+    - `stylesheet.css`
+    - `uapStylesheet.css`
+- **[views]**
+  - `academic.ejs`
+  - `apiAuthIndex.ejs`
+  - `inProgress.ejs`
+  - `index.ejs`
+  - `military.ejs`
+  - **[partials]**
+    - **[main]**
+      - `footer.ejs`
+      - `header.ejs`
+      - `navbar.ejs`
+    - **[uap]**
+      - `uapFooter.ejs`
+      - `uapHeader.ejs`
+      - `uapMap.ejs`
+  - `pipeline.ejs`
+  - `resume.ejs`
+  - `sudoku.ejs`
+  - `uap.ejs`
+<!-- END: contents list -->
