@@ -31,6 +31,8 @@
     - `JohnstonMichaelCV.pdf`
     - `JohnstonResume.pdf`
   - **[images]**
+    - `Linkedin-logo.png`
+    - `github-mark.png`
     - **[home]**
       - `ibexBoredChair02.jpg`
       - `memojiFace.png`
