@@ -1,3 +1,4 @@
+
 <nav>
   <div class="header-logo-image">
     <a href="/">
@@ -7,9 +8,9 @@
   <div class="navbar">
       <div class="menu">
           <a href="/">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
+          <a href="/#about">About</a>
+          <!-- <a href="#">Services</a> -->
+          <a id="open-modal-btn">Contact</a>
       </div>
       <div class="toggle-button">
           <span></span>
@@ -19,13 +20,33 @@
   </div>
 </nav>
 
-<script>
 
+<div id="description-modal" class="modal">
+  <div id="modal-content">
+    <span id="close-btn">&times;</span>
+      <h2 class="modal-title">Contact</h2>
+      <h3 class="modal-sub-title">Here are a few ways we can link up:</h3>
+      <br>
+      <a href="mailto:Michael@Johnston-M.com" class="modal-link">Michael@Johnston-M.com</a>
+      <div class="list">
+          <ul class="contact_list">
+              <li class="contact_list_item"><a href="https://linkedin.com/in/MichaelDJohnston-CS"><img src="images/Linkedin-logo.png" alt="Linkedin Logo"></a></li>
+              <li class="contact_list_item"><a href="https://github.com/md9j"><img src="images/github-mark.png" alt="Github logo"></a></li>
+          </ul>
+      </div>
+      <p>Go ahead, reach out</p>
+      <p>Operators are standing by</p>
+  </div>
+</div>
+
+
+
+
+<script>
   const toggleButton = document.querySelector('.toggle-button');
   const menu = document.querySelector('.menu');
 
   toggleButton.addEventListener('click', () => {
     menu.classList.toggle('active');
   });
-
 </script>
