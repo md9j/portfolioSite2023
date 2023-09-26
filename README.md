@@ -6,7 +6,7 @@
 
 * This is where my personal website (johnston-m.com) is being re-built.
 * The site is now live at [johnston-m.com](https://johnston-m.com).
-* Please be aware, this site will always be a work in progress; technologies will be added and removed as I learn and grow, prjects will be added as they are adapted for this format, and the appearance will change from time to time.
+* Please be aware, this site will always be a work in progress; technologies will be added and removed as I learn and grow, projects will be added as they are adapted for this format, and the appearance will change from time to time.
 * Swing by, I hope to see ya soon!
 
 ## File Structure 
