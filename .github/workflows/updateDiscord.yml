@@ -23,8 +23,9 @@ jobs:
       - name: Get merge information
         id: merge_info
         run: |
-          LAST_MERGE_COMMIT=$(git log --merges -n 1 --pretty=format:"%h %s" origin/main...HEAD)
-          echo "merge_info=${LAST_MERGE_COMMIT}" >> $GITHUB_ENV
+            LAST_MERGE_COMMIT=$(git log --merges -n 1 --pretty=format:"%h %s" main...HEAD)
+            echo "merge_info=${LAST_MERGE_COMMIT}" >> $GITHUB_ENV
+        
 
       - name: Discord Webhook Action
         uses: tsickert/discord-webhook@v5.3.0
