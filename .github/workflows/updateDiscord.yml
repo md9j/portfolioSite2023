@@ -20,9 +20,14 @@ jobs:
         env:
           TZ: America/Denver
 
+      - name: Get merge information
+        id: merge_info
+        run: |
+          LAST_MERGE_COMMIT=$(git log --merges -n 1 --pretty=format:"%h %s" origin/main...HEAD)
+          echo "merge_info=${LAST_MERGE_COMMIT}" >> $GITHUB_ENV
+
       - name: Discord Webhook Action
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
-          content: "Updates arrived at ${{ env.now }}, check it out and see what's changed!"
-
+          content: "Updates arrived at ${{ env.now }}, check it out and see what's changed!\n\nLast merge: ${{ env.merge_info }}"
