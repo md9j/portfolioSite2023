@@ -1,16 +1,17 @@
 name: UpdateDiscord
 
 on:
-  push:
-    branches:
-      - deploy_live
+  pull_request:
+    types:
+      - closed
 
 jobs:
   message:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Check if the event is a merge from 'main' to 'deploy_live'
+        id: check-merge
+        run: echo ::set-output name=is_merged::${{ github.event.pull_request.base.ref == 'deploy_live' && github.event.pull_request.merged == true }}
 
       - name: Get time
         id: time
@@ -20,15 +21,16 @@ jobs:
         env:
           TZ: America/Denver
 
-      - name: Get merge information
-        id: merge_info
+      - name: Send Discord message
+        if: steps.check-merge.outputs.is_merged == 'true'
+        env:
+            DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-
-          LAST_MERGE_COMMIT=$(git log --merges -n 1 --pretty=format:"%h %s" main..deploy_live)
-          echo "merge_info=${LAST_MERGE_COMMIT}" >> $GITHUB_EN
-        
-      - name: Discord Webhook Action
-        uses: tsickert/discord-webhook@v5.3.0
-        with:
-          webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
-          content: "Updates arrived at ${{ env.now }}, check it out and see what's changed!\n\nLast merge: ${{ env.merge_info }}"
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_COMMENTS_URL="${{ github.event.pull_request.comments_url }}"
+            
+          MESSAGE=":white_check_mark: Pull request merged from 'main' to 'deploy_live':
+          **Title**: ${PR_TITLE}
+          **Comments**: ${PR_COMMENTS_URL}"
+  
+          curl -X POST -H "Content-Type: application/json" -d "{\"content\":\"${MESSAGE}\"}" "${DISCORD_WEBHOOK}"
