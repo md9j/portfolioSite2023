@@ -8,27 +8,27 @@ on:
 jobs:
   message:
     runs-on: ubuntu-latest
+    env:
+      TZ: America/Denver
     steps:
       - name: Check if the event is a merge from 'main' to 'deploy_live'
         id: check-merge
-        run: echo ::set-output name=is_merged::${{ github.event.pull_request.base.ref == 'deploy_live' && github.event.pull_request.merged == true }}
+        run: echo "is_merged=${{ github.event.pull_request.base.ref == 'deploy_live' && github.event.pull_request.merged == true }}" >> $GITHUB_ENV
 
       - name: Get time
         id: time
         run: |
           NOW=$(date +"%Y-%m-%d %H:%M:%S")
           echo "now=${NOW}" >> $GITHUB_ENV
-        env:
-          TZ: America/Denver
 
       - name: Get PR Comments
         id: get-comments
         run: |
           COMMENTS=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "${{ github.event.pull_request.comments_url }}")
           echo "COMMENTS=${COMMENTS}" >> $GITHUB_ENV
-
+  
       - name: Discord Webhook Action
         uses: tsickert/discord-webhook@v5.3.0
         with:
           webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
-          content: "Updates arrived at ${{ env.NOW }}, check it out and see what's changed!\n\nLast merge:  ${{ github.event.pull_request.merged_at }}\n\n${{ github.event.pull_request.title }}\n\nComments:\n${{ env.COMMENTS }}"
+          content: "Updates arrived at ${{ env.now }}, check it out and see what's changed!\n\nLast merge:  ${{ github.event.pull_request.merged_at }}\n\n${{ github.event.pull_request.title }}\n\nComments:\n${{ env.COMMENTS }}"
