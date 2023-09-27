@@ -23,12 +23,13 @@ jobs:
 
       - name: Get PR Comments
         id: get-comments
-        run: |
-          COMMENTS=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "${{ github.event.pull_request.comments_url }}")
-          echo "COMMENTS=${COMMENTS}" >> $GITHUB_ENV
-
-      - name: Discord Webhook Action
-        uses: tsickert/discord-webhook@v5.3.0
+        uses: octokit/request-action@v2.x
         with:
-          webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
-          content: "Updates arrived at ${{ env.now }}, check it out and see what's changed!\n\nLast merge:  ${{ github.event.pull_request.merged_at }}\n\n${{ github.event.pull_request.title }}\n\nComments:\n${{ env.COMMENTS }}"
+          route: GET /repos/:${{ github.repository_owner }}/:${{ github.repository }}/issues/:${{ github.event.pull_request.number }}/comments
+      
+      - name: Send Discord Message
+        uses: appleboy/discord-action@master
+        with:
+            webhook_id: ${{ secrets.DISCORD_WEBHOOK }}
+            webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+            message: "Updates arrived at ${{ env.now }}, check it out and see what's changed!\n\nLast merge:  ${{ github.event.pull_request.merged_at }}\n\n${{ github.event.pull_request.title }}\n\nComments:\n${{ steps.get-comments.outputs.comments }}"
