@@ -24,6 +24,8 @@ jobs:
       - name: Get PR Comments
         id: get-comments
         uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           route: GET /repos/:${{ github.repository_owner }}/:${{ github.repository }}/issues/:${{ github.event.pull_request.number }}/comments
       
