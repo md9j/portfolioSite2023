@@ -21,16 +21,17 @@ jobs:
         env:
           TZ: America/Denver
 
-      - name: Send Discord message
+      - name: Get merge info
         if: steps.check-merge.outputs.is_merged == 'true'
         env:
             DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
           PR_COMMENTS_URL="${{ github.event.pull_request.comments_url }}"
-            
-          MESSAGE=":white_check_mark: Pull request merged from 'main' to 'deploy_live':
-          **Title**: ${PR_TITLE}
-          **Comments**: ${PR_COMMENTS_URL}"
-  
-          curl -X POST -H "Content-Type: application/json" -d "{\"content\":\"${MESSAGE}\"}" "${DISCORD_WEBHOOK}"
+          PR_MERGED_AT="${{ github.event.pull_request.merged_at }}"
+
+      - name: Discord Webhook Action
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
+          content: "Updates arrived at ${{ env.now }}, check it out and see what's changed!\n\nLast merge:  ${{ github.event.pull_request.merged_at }}\n\n${{ github.event.pull_request.title }}\n\n${{ github.event.pull_request.comments_url }}"
