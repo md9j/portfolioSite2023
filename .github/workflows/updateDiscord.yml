@@ -8,30 +8,30 @@ on:
 jobs:
   message:
     runs-on: ubuntu-latest
-    env:
-      TZ: America/Denver
     steps:
       - name: Check if the event is a merge from 'main' to 'deploy_live'
         id: check-merge
-        run: echo "is_merged=${{ github.event.pull_request.base.ref == 'deploy_live' && github.event.pull_request.merged == true }}" >> $GITHUB_ENV
+        run: echo ::set-output name=is_merged::${{ github.event.pull_request.base.ref == 'deploy_live' && github.event.pull_request.merged == true }}
 
       - name: Get time
         id: time
         run: |
           NOW=$(date +"%Y-%m-%d %H:%M:%S")
           echo "now=${NOW}" >> $GITHUB_ENV
-
-      - name: Get PR Comments
-        id: get-comments
-        uses: octokit/request-action@v2.x
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TZ: America/Denver
+
+      - name: Get merge info
+        if: steps.check-merge.outputs.is_merged == 'true'
+        env:
+            DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_COMMENTS_URL="${{ github.event.pull_request.comments_url }}"
+          PR_MERGED_AT="${{ github.event.pull_request.merged_at }}"
+
+      - name: Discord Webhook Action
+        uses: tsickert/discord-webhook@v5.3.0
         with:
-          route: GET /repos/:${{ github.repository_owner }}/:${{ github.repository }}/issues/:${{ github.event.pull_request.number }}/comments
-      
-      - name: Send Discord Message
-        uses: appleboy/discord-action@master
-        with:
-            webhook_id: ${{ secrets.DISCORD_WEBHOOK }}
-            webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
-            message: "Updates arrived at ${{ env.now }}, check it out and see what's changed!\n\nLast merge:  ${{ github.event.pull_request.merged_at }}\n\n${{ github.event.pull_request.title }}\n\nComments:\n${{ steps.get-comments.outputs.comments }}"
+          webhook-url: ${{ secrets.DISCORD_SITE_UPDATE_WEBHOOK }}
+          content: "Updates arrived at ${{ env.now }}, check it out and see what's changed!\n\nLast merge:  ${{ github.event.pull_request.merged_at }}\n\n${{ github.event.pull_request.title }}\n\n${{ github.event.pull_request.comments_url }}"
