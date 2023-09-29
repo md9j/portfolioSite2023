@@ -122,8 +122,8 @@ nav {
 }
 
 .contact_list_item {
-  width: 10%; /* 15% the size of the description-modal div */
-  margin: 2% 5%; /* Adjust the margin as needed */
+  width: 10%;
+  margin: 2% 5%;
 }
 
 .contact_list_item img {
@@ -131,6 +131,10 @@ nav {
   height: auto;
 }
 
+.qr_code {
+  background-color: #d65a31;
+  border-radius: 12%;
+}
 .contact_list_item:hover {
   opacity: 0.7;
 }
