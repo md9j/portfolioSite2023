@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<link rel="stylesheet" href="styles/stylesheet.css" />
+    
 		<link rel="stylesheet" href="styles/navbarStylesheet.css" />
 		<link rel="stylesheet" href="styles/drums.css" />
 
@@ -30,7 +29,12 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" />
 	</head>
-<!-- Include the navbar partial -->
-<%- include("navbar.ejs") %>
-	<body>
-		<main>
+<!-- Include the header partial -->
+<%- include("partials/main/navbar.ejs") %>
+
+<!-- Include the map partial -->
+<%- include("partials/crashDrummer.ejs") %>
+
+
+<!-- Include the footer partial -->
+<div><%- include("partials/main/footer.ejs") %></div>

@@ -75,6 +75,11 @@ app.get('/pipeline', (req, res) => {
     res.render('pipeline.ejs');
 });
 
+// Drumsroute *******************
+app.get('/drums', (req, res) => {
+    res.render('drums.ejs');
+});
+
 // In Progress route *******************
 app.get('/inProgress', (req, res) => {
     res.render('inProgress.ejs');
