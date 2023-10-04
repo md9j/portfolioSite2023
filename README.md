@@ -14,6 +14,7 @@
 
 ### Portfolio Site 2023
 <!-- START: contents list -->
+- `.DS_Store`
 - `.gitignore`
 - `Dockerfile`
 - `README.md`
@@ -24,6 +25,7 @@
 - `package-lock.json`
 - `package.json`
 - **[public]**
+  - `.DS_Store`
   - **[data]**
     - `sudokuSolver.txt`
   - **[documents]**
@@ -32,34 +34,74 @@
     - `JohnstonMichaelCV.pdf`
     - `JohnstonResume.pdf`
   - **[images]**
+    - `.DS_Store`
+    - `Johnston_Card_noBackground.png`
     - `Linkedin-logo.png`
+    - `centaur.png`
+    - `crash.png`
+    - `dark-background.jpg`
+    - `drum-kit.png`
     - `github-mark.png`
     - **[home]**
       - `ibexBoredChair02.jpg`
       - `memojiFace.png`
+    - `hydra.png`
     - `ibexSuitChair.jpg`
     - `ibexSuitChairRelax.jpg`
     - `jbex05Orange.png`
     - `jbexFaviconBlack.ico`
+    - `kick.png`
     - `manReactsT0Secret.jpg`
+    - `minotaur.png`
+    - `mnemosyne.png`
+    - `mouse-click.png`
     - `portfolioPipeline.svg`
     - `portfolioPipelineWhiteLine.svg`
+    - `snare.png`
+    - `tom1.png`
+    - `tom2.png`
+    - `tom3.png`
+    - `tom4.png`
+    - `werewolf.png`
   - **[scripts]**
+    - `drums.js`
+    - `game.js`
     - `modal.js`
+  - **[sounds]**
+    - `blue.mp3`
+    - `crash.mp3`
+    - `green.mp3`
+    - `kick-bass.mp3`
+    - `red.mp3`
+    - `snare.mp3`
+    - `tom-1.mp3`
+    - `tom-2.mp3`
+    - `tom-3.mp3`
+    - `tom-4.mp3`
+    - `wrong.mp3`
+    - `yellow.mp3`
   - **[styles]**
     - `apiAuthMain.css`
+    - `drums.css`
     - **[fonts]**
+      - `gelioPasteli.ttf`
+      - `metal.ttf`
       - `momsTypewriter.ttf`
     - `navbarStylesheet.css`
     - `stylesheet.css`
     - `uapStylesheet.css`
 - **[views]**
+  - `.DS_Store`
   - `academic.ejs`
   - `apiAuthIndex.ejs`
+  - `drums.ejs`
   - `inProgress.ejs`
   - `index.ejs`
   - `military.ejs`
+  - `mnemosyne.ejs`
   - **[partials]**
+    - `.DS_Store`
+    - `crashDrummer.ejs`
     - **[main]**
       - `footer.ejs`
       - `header.ejs`
