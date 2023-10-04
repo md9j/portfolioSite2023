@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "greek";
+    src: url("../styles/fonts/gelioPasteli.ttf");
+}
+
 /* General Tags */
 body {
     font-family: 'Hanken Grotesk', sans-serif;
@@ -40,6 +45,7 @@ body {
 .tagline {
     text-align: center;
     font-size: 1.3rem;
+    margin: 5% 10% 3% 10%;
 }
 
 .pageTitle {
@@ -303,4 +309,72 @@ footer {
 .containerNote {
     text-align: right; 
     margin-right: 10%;
+}
+
+/* Mnemosyne */
+#level-title {
+    font-family: "greek", cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin:  5%;
+    color: #FEF2BF;
+}
+
+.game-title {
+    font-family: "greek", cursive;
+    font-size: 5rem;
+    text-align: center;
+    margin:  0% 5% 1% 5%;
+    color: #FEF2BF
+}
+
+.container-mnemosyne {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+}
+
+.btn-mnemosyne {
+    margin: 25px;
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border: 10px solid black;
+    border-radius: 20%;
+}
+
+.game-over {
+    background-color: red;
+    opacity: 0.8;
+}
+
+.red {
+    background-color: red;
+    background-image: url(../images/minotaur.png);
+    background-size: cover;
+}
+
+.green {
+    background-color: green;
+    background-image: url(../images/hydra.png);
+    background-size: cover;
+}
+
+.blue {
+    background-color: blue;
+    background-image: url(../images/werewolf.png);
+    background-size: cover;
+}
+
+.yellow {
+    background-color: yellow;
+    background-image: url(../images/centaur.png);
+    background-size: cover;
+}
+
+.pressed {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
 }

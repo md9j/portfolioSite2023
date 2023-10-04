@@ -1,0 +1,47 @@
+<!-- Include the header partial -->
+<%- include("partials/main/header.ejs") %>
+
+<h1 class="pageTitle">Mnemosyne</h1>
+
+<div class="tagline">
+  <p>In Greek mythology, Mnemosyne was the personification of memory and the mother of the Muses, who were the nine goddesses of the arts and sciences</p>
+  <p>Will you make her proud or will you bring her shame?</p>
+  <p>The Goddess will flash a color, creature, and a sound for you.</p>
+  <p>You must click that matching item.</p>
+  <p>If you were correct, the Goddess will give you another color, creature, and a sound for you to add to the sequence that must be repeated back to her.</p>
+  <p>Καλὴ τύχη</p>
+  <p>(good luck)</p>
+</div>
+
+<br>
+<h1 class="game-title">Mnemosyne</h1>
+<h1 id="level-title">Press Any Key to Start</h1>
+
+<div class="container-mnemosyne">
+  <div class="row">
+
+    <div type="button" id="green" class="btn-mnemosyne green">
+    </div>
+
+    <div type="button" id="red" class="btn-mnemosyne red">
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div type="button" id="yellow" class="btn-mnemosyne yellow">
+    </div>
+    
+    <div type="button" id="blue" class="btn-mnemosyne blue">
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="scripts/game.js" charset="utf-8"></script>
+
+
+<!-- Include the footer partial -->
+<div><%- include("partials/main/footer.ejs") %></div>
