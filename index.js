@@ -220,3 +220,8 @@ app.get("/bearerToken", async (req, res) => {
         res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true });
     });
 });
+
+// Mnemosyne *******************
+app.get('/mnemosyne', (req, res) => {
+    res.render('mnemosyne.ejs');
+});
