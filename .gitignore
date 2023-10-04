@@ -1,3 +1,4 @@
 node_modules
 # authorizationConfig.js #not important info contained, practice info
+.DS_Store
 porfolioSite2023.code-workspace
