@@ -33,12 +33,12 @@ app.listen(port, () => {
 
 // Route handlers ********************
 app.get('/', (req, res) => {
-    res.render('index.ejs');
+    res.render('index.ejs', { pageTitle: 'mJohnston' });
 });
 
 // Resume route *******************
 app.get('/resume', (req, res) => {
-    res.render('resume.ejs');
+    res.render('resume.ejs', { pageTitle: 'mJ Resume' });
 });
 
 app.get('/download-resume', (req, res) => {
@@ -48,7 +48,7 @@ app.get('/download-resume', (req, res) => {
 
 // Academic route *******************
 app.get('/academic', (req, res) => {
-    res.render('academic.ejs');
+    res.render('academic.ejs', { pageTitle: 'mJ Academics' });
 });
 app.get('/download-academic', (req, res) => {
     const filePath = __dirname + '/public/documents/JohnstonResume.pdf';
@@ -57,7 +57,7 @@ app.get('/download-academic', (req, res) => {
 
 // Military route *******************
 app.get('/military', (req, res) => {
-    res.render('military.ejs');
+    res.render('military.ejs', { pageTitle: 'mJ Military' });
 });
 
 app.get('/download-military', (req, res) => {
@@ -67,27 +67,27 @@ app.get('/download-military', (req, res) => {
 
 // UAP route *******************
 app.get('/uap', (req, res) => {
-    res.render('uap.ejs');
+    res.render('uap.ejs', { pageTitle: 'mJ UAP/UFO' });
 });
 
 // Pipeline route *******************
 app.get('/pipeline', (req, res) => {
-    res.render('pipeline.ejs');
+    res.render('pipeline.ejs', { pageTitle: 'mJ CI/CD' });
 });
 
-// Drumsroute *******************
+// Drums route *******************
 app.get('/drums', (req, res) => {
-    res.render('drums.ejs');
+    res.render('drums.ejs', { pageTitle: 'mJ Crash Drummer' });
 });
 
 // In Progress route *******************
 app.get('/inProgress', (req, res) => {
-    res.render('inProgress.ejs');
+    res.render('inProgress.ejs', { pageTitle: 'mJ In Progress' });
 });
 
 // Sudoku route *******************
 app.get('/sudoku', (req, res) => {
-    res.render('sudoku.ejs', {sudokuSolverContent});
+    res.render('sudoku.ejs', {sudokuSolverContent, pageTitle: 'mJ Sudoku' });
 });
 
 // Show Sudoku Solver route
@@ -95,7 +95,7 @@ app.get('/sudoku-solver', async (req, res) => {
     const filePath = path.join('public', 'data', 'sudokuSolver.txt');
     try {
         const data = await fs.readFile(filePath, 'utf8');
-        res.render("sudoku", { sudokuSolverContent: data });
+        res.render("sudoku", { sudokuSolverContent: data, pageTitle: 'mJ View Sudoku' });
     } catch (err) {
         console.error(err);
         res.send('Error reading the file.');
@@ -116,7 +116,7 @@ app.get('/download-text', async (req, res) => {
 
 // API routes *******************
 app.get("/apiAuthsSecrets", (req, res) => {
-    res.render("apiAuthIndex.ejs", { content: null, error: null, initialModalShown: false });
+    res.render("apiAuthIndex.ejs", { content: null, error: null, initialModalShown: false, pageTitle: 'mJ Secrets' });
 });
 
 app.get("/noAuth", async (req, res) => {
@@ -129,12 +129,12 @@ app.get("/noAuth", async (req, res) => {
     .then((response) => {
         console.log(response.data);
         const responseData = response.data;
-        res.render("apiAuthIndex.ejs", { content: responseData, error: null, initialModalShown: true });
+        res.render("apiAuthIndex.ejs", { content: responseData, error: null, initialModalShown: true, pageTitle: 'mJ API (No Auth) Secrets' });
     })
     .catch (error => {
         console.error("Failed to make request:", error.message);
         console.trace();
-        res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true });
+        res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true, pageTitle: 'mJ API (Error) Secrets' });
     });
 });
 
@@ -159,12 +159,12 @@ app.get("/basicAuth", async (req, res) => {
     .then((response) => {
         console.log(response.data);
         const responseData = response.data;
-        res.render("apiAuthIndex.ejs", { content: responseData, error: null, initialModalShown: true });
+        res.render("apiAuthIndex.ejs", { content: responseData, error: null, initialModalShown: true, pageTitle: 'mJ API (Basic) Secrets' });
         }) 
     .catch (error => {
         console.error("Failed to make request:", error.message);
         console.trace();
-        res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true });
+        res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true,  pageTitle: 'mJ API (Error) Secrets' });
     });
 });
 
@@ -188,12 +188,12 @@ app.get("/apiKey", async (req, res) => {
     .then((response) => {
         console.log(response.data);
         const responseData = response.data;
-        res.render("apiAuthIndex.ejs", { content: responseData, error: null, initialModalShown: true });
+        res.render("apiAuthIndex.ejs", { content: responseData, error: null, initialModalShown: true,  pageTitle: 'mJ API (Key) Secrets' });
     }) 
     .catch (error => {
         console.error("Failed to make request:", error.message);
         console.trace();
-        res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true });
+        res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true,  pageTitle: 'mJ API (Error) Secrets' });
     });
 });
 
@@ -212,16 +212,16 @@ app.get("/bearerToken", async (req, res) => {
     .then((response) => {
         console.log(response.data);
         const responseData = response.data;
-        res.render("apiAuthIndex.ejs", { content: responseData, error: null, initialModalShown: true });
+        res.render("apiAuthIndex.ejs", { content: responseData, error: null, initialModalShown: true,  pageTitle: 'mJ API (Token) Secrets' });
     }) 
     .catch (error => {
         console.error("Failed to make request:", error.message);
         console.trace();
-        res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true });
+        res.render("apiAuthIndex.ejs", { content: null, error: error.message, initialModalShown: true,  pageTitle: 'mJ API (Error) Secrets' });
     });
 });
 
 // Mnemosyne *******************
 app.get('/mnemosyne', (req, res) => {
-    res.render('mnemosyne.ejs');
+    res.render('mnemosyne.ejs', { pageTitle: 'mJ Mnemosyne' });
 });
