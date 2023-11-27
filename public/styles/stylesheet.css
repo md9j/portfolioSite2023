@@ -13,14 +13,24 @@ body {
 }
 
 /* Title */
+#mainImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 512px;
+    
+}
+
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
     margin-top: 7rem;
-    /* padding-top: 10rem; */
     border-radius: 5rem;
+    max-width: 100%;
+    transition: all 0.3s ease-in-out;
 }
 
 .title01 {

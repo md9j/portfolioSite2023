@@ -1,8 +1,8 @@
 <!-- Include the header partial -->
 <%- include("partials/main/header.ejs") %>
 
-<a href="https://en.wikipedia.org/wiki/Ibex">
-	<img class="logo" src="images/home/ibexBoredChair02.jpg" alt="jbex Ibex"
+<a id="mainImage" href="https://en.wikipedia.org/wiki/Ibex">
+	<img id="ibexImage" class="logo" src="images/home/ibexBoredChair02.jpg" alt="jbex Ibex"
 /></a>
 <h1 class="title01" data-value="mJOHNSTON">mJOHNSTON</h1>
 <h3 class="tagline">... this place, always growing.</h3>
@@ -73,5 +73,27 @@
 		}, 40);
 	};
 </script>
+
+<script>
+
+const ibexImage = document.getElementById("ibexImage");
+const primarySrc = ibexImage.src;
+const secondarySrc = "images/home/steamBadgerChair.jpg";
+const primaryLink = "https://en.wikipedia.org/wiki/Ibex";
+const secondaryLink = "https://en.wikipedia.org/wiki/Honey_badger";
+
+ibexImage.addEventListener("mouseover", () => {
+	if (ibexImage.src === primarySrc) {
+		ibexImage.src = secondarySrc;
+		mainImage.href = secondaryLink;
+	}
+	else {
+		ibexImage.src = primarySrc;
+		mainImage.href = primaryLink;
+	}
+});
+
+</script>
+
 <!-- Include the footer partial -->
 <div><%- include("partials/main/footer.ejs") %></div>
