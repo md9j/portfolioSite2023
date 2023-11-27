@@ -1,4 +1,4 @@
 export const username = 'portfolio';
 export const password = 'showMEtheSECRETS';
-export const apiKey = 'cfb08864-e8f7-4177-9e36-8368a6c816ca';
-export const bearerToken = '502400db-56ce-4576-a069-fb24e628a7dd'
+export const apiKey = '206a3c1a-ea3a-4993-acb6-43b98a8f1f34';
+export const bearerToken = '36026ecc-891f-40d0-9b2a-7fbaf820ac7c'
