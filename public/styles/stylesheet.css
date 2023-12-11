@@ -4,6 +4,7 @@
 }
 
 /* General Tags */
+
 body {
     font-family: 'Hanken Grotesk', sans-serif;
     background: black;
@@ -18,8 +19,9 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-top: 5rem;
     max-width: 512px;
-    
+    z-index: -1;
 }
 
 .logo {
@@ -27,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
     border-radius: 5rem;
     max-width: 100%;
     transition: all 0.3s ease-in-out;

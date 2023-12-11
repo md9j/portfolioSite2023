@@ -45,6 +45,7 @@
     - **[home]**
       - `ibexBoredChair02.jpg`
       - `memojiFace.png`
+      - `steamBadgerChair.jpg`
     - `hydra.png`
     - `ibexSuitChair.jpg`
     - `ibexSuitChairRelax.jpg`
