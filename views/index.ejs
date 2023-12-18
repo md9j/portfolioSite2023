@@ -29,16 +29,18 @@
 <br /> 
 
 <div class="button-container-projects">
-<h3><button id="pipeline" class="custom-btn btn-2">Pipeline for this Site</button></h3>
-<h3><button id="uapLoad" class="custom-btn btn-2">UAP Map</button></h3>
-<h3><button id="apiAuthsSecrets" class="custom-btn btn-2">Secrets (API Auths)</button></h3>
-<h3><button id="sudokuLoad" class="custom-btn btn-2">Sudoku Solver</button></h3>
-<h3><button id="drums" class="custom-btn btn-2">Crash Drummer</button></h3>
-<h3><button id="mnemosyne" class="custom-btn btn-2">Mnemosyne</button></h3>
+	<div class="column">
+		<h3><button id="pipeline" class="custom-btn btn-2">Pipeline for this Site</button></h3>
+		<h3><button id="uapLoad" class="custom-btn btn-2">UAP Map (database)</button></h3>
+		<h3><button id="doctorWhodabase" class="custom-btn btn-2" onclick="window.open('https://www.doctorWhodabase.com', '_blank')">Doctor Whodabase (database)</button></h3>
+	</div>
+	<div class="column">
+		<h3><button id="apiAuthsSecrets" class="custom-btn btn-2">Secrets (API Auths)</button></h3>
+		<h3><button id="sudokuLoad" class="custom-btn btn-2">Sudoku Solver (java tool)</button></h3>
+		<h3><button id="drums" class="custom-btn btn-2">Crash Drummer (play around)</button></h3>
+		<h3><button id="mnemosyne" class="custom-btn btn-2">Mnemosyne (game)</button></h3>
+	</div>
 </div>
-
-
-
 
 <!-- JS Script for Title Animation -->
 <script>
@@ -73,24 +75,21 @@
 </script>
 
 <script>
+	const ibexImage = document.getElementById("ibexImage");
+	const primarySrc = ibexImage.src;
+	const secondarySrc = "images/home/steamBadgerChair.jpg";
+	const primaryLink = "https://en.wikipedia.org/wiki/Ibex";
+	const secondaryLink = "https://en.wikipedia.org/wiki/Honey_badger";
 
-const ibexImage = document.getElementById("ibexImage");
-const primarySrc = ibexImage.src;
-const secondarySrc = "images/home/steamBadgerChair.jpg";
-const primaryLink = "https://en.wikipedia.org/wiki/Ibex";
-const secondaryLink = "https://en.wikipedia.org/wiki/Honey_badger";
-
-ibexImage.addEventListener("mouseover", () => {
-	if (ibexImage.src === primarySrc) {
-		ibexImage.src = secondarySrc;
-		mainImage.href = secondaryLink;
-	}
-	else {
-		ibexImage.src = primarySrc;
-		mainImage.href = primaryLink;
-	}
-});
-
+	ibexImage.addEventListener("mouseover", () => {
+		if (ibexImage.src === primarySrc) {
+			ibexImage.src = secondarySrc;
+			mainImage.href = secondaryLink;
+		} else {
+			ibexImage.src = primarySrc;
+			mainImage.href = primaryLink;
+		}
+	});
 </script>
 
 <!-- Include the footer partial -->
