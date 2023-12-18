@@ -126,9 +126,9 @@ body {
 
 .button-container-projects {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     margin: auto;
     text-align: center;
 }
