@@ -1,4 +1,7 @@
 {
   "editor.tabSize": 2,
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "circleci.persistedProjectSelection": [
+    "gh/md9j/portfolioSite2023"
+  ]
 }
