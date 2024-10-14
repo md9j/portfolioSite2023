@@ -197,6 +197,14 @@ button {
     inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
 
+.body__link {
+    display: flex;
+    font-weight: var(--fw-bold);
+    color:#ffffff;
+    text-decoration: none;
+    width: auto;
+}
+
 /* Footer */
 footer {
     font-family: 'Hanken Grotesk', sans-serif;
