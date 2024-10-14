@@ -198,7 +198,7 @@ button {
 }
 
 .body__link {
-    display: flex;
+    display: inline;
     font-weight: var(--fw-bold);
     color:#ffffff;
     text-decoration: none;
