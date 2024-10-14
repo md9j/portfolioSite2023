@@ -1,58 +1,73 @@
-
 <nav>
-  <div class="header-logo-image">
-    <a href="/">
-      <img src="images/jbex05Orange.png" alt="mJOHNSTON">
-    </a>
-  </div>
-  <div class="navbar">
-      <div class="menu">
-          <a href="/">Home</a>
-          <a href="/#about">About</a>
-          <!-- <a href="#">Services</a> -->
-          <a id="open-modal-btn">Contact</a>
-      </div>
-      <div class="toggle-button">
-          <span></span>
-          <span></span>
-          <span></span>
-      </div>
-  </div>
+	<div class="header-logo-image">
+		<a href="/">
+			<img src="images/jbex05Orange.png" alt="mJOHNSTON" />
+		</a>
+	</div>
+	<div class="navbar">
+		<div class="menu">
+			<a href="/">Home</a>
+			<a href="/#about">About</a>
+			<!-- <a href="#">Services</a> -->
+			<a id="open-modal-btn">Contact</a>
+		</div>
+		<div class="toggle-button">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
 </nav>
 
-
 <div id="description-modal" class="modal">
-  <div id="modal-content">
-    <span id="close-btn">&times;</span>
-      <h2 class="modal-title">Contact</h2>
-      <h3 class="modal-sub-title">Here are a few ways we can link up:</h3>
-      <br>
-      <a href="mailto:Michael@Johnston-M.com" class="modal-link">Michael@Johnston-M.com</a>
-      <div class="list">
-          <ul class="contact_list">
-              <li class="contact_list_item "><a href="https://linkedin.com/in/MichaelDJohnston-CS"><img src="images/Linkedin-logo.png" alt="Linkedin Logo"></a></li>
-              <li class="contact_list_item qr_code"><a href="https://linko.page/rz8rxs0n0lnx"><img src="images/Johnston_Card_noBackground.png" alt="QR Code to contact card"></a></li>
-              <li class="contact_list_item"><a href="https://github.com/md9j"><img src="images/github-mark.png" alt="Github logo"></a></li>
-          </ul>
-      </div>
-      <br
-      <p>You may also contact me through my:</p>
-      <a link class="modal-link" href="https://discord.gg/5Qwx7cnrT">Website Discord Server</a>
-      <p>or</p>
-      <a link class="modal-link" href="https://discord.gg/xhhCS2g9P">Website Update Discord Server</a>
-      <br>
-      <p>Go ahead, reach out</p>
-  </div>
+	<div id="modal-content">
+		<span id="close-btn">&times;</span>
+		<h2 class="modal-title">Contact</h2>
+		<h3 class="modal-sub-title">Here are a few ways we can link up:</h3>
+		<br />
+		<a href="mailto:Michael@Johnston-M.com" class="modal-link"
+			>Michael@Johnston-M.com</a
+		>
+		<div class="list">
+			<ul class="contact_list">
+				<li class="contact_list_item">
+					<a href="https://linkedin.com/in/MichaelDJohnston-CS"
+						><img src="images/Linkedin-logo.png" alt="Linkedin Logo"
+					/></a>
+				</li>
+				<li class="contact_list_item qr_code">
+					<a href="https://linko.page/rz8rxs0n0lnx"
+						><img
+							src="images/Johnston_Card_noBackground.png"
+							alt="QR Code to contact card"
+					/></a>
+				</li>
+				<li class="contact_list_item">
+					<a href="https://github.com/md9j"
+						><img src="images/github-mark.png" alt="Github logo"
+					/></a>
+				</li>
+			</ul>
+		</div>
+		<br />
+		<p>You may also contact me through my:</p>
+		<a link class="modal-link" href="https://discord.gg/5Qwx7cnrT"
+			>Website Discord Server</a
+		>
+		<p>or</p>
+		<a link class="modal-link" href="https://discord.gg/xhhCS2g9P"
+			>Website Update Discord Server</a
+		>
+		<br />
+		<p>Go ahead, reach out</p>
+	</div>
 </div>
 
-
-
-
 <script>
-  const toggleButton = document.querySelector('.toggle-button');
-  const menu = document.querySelector('.menu');
+	const toggleButton = document.querySelector(".toggle-button");
+	const menu = document.querySelector(".menu");
 
-  toggleButton.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
+	toggleButton.addEventListener("click", () => {
+		menu.classList.toggle("active");
+	});
 </script>
