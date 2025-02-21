@@ -1,0 +1,77 @@
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+} */
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Ensure borders don’t collapse so our thicker borders can show */
+#sudoku-board {
+  border-collapse: collapse;
+  margin: auto;
+  border:solid 4px rgb(245, 135, 45, 0.75);
+}
+
+/* Default cell styling */
+#sudoku-board td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 0;
+  border: 1px solid #333;
+}
+
+/* Every 3rd row gets a thicker bottom border */
+#sudoku-board tr:nth-child(3n) td {
+  border-bottom: 3px solid #333;
+}
+
+/* The first row of each block gets a thicker top border */
+#sudoku-board tr:nth-child(3n+1) td {
+  border-top: 3px solid #333;
+}
+
+/* Every 3rd column gets a thicker right border */
+#sudoku-board td:nth-child(3n) {
+  border-right: 3px solid #333;
+}
+
+/* The first column of each block gets a thicker left border */
+#sudoku-board td:nth-child(3n+1) {
+  border-left: 3px solid #333;
+}
+
+#sudoku-board input {
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+}
+
+.buttons {
+  margin-top: 40px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#message {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #007700;
+}

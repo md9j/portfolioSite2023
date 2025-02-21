@@ -29,10 +29,10 @@
   - **[data]**
     - `sudokuSolver.txt`
   - **[documents]**
-    - `BiographicalSketchJohnstonMichaelNoPII.pdf`
     - `Johnston-M-UCCS-CeDiploma.pdf`
     - `JohnstonMichaelCV.pdf`
     - `JohnstonResume.pdf`
+    - `Michael_Johnston_MilitaryXP.pdf`
   - **[images]**
     - `.DS_Store`
     - `Johnston_Card_noBackground.png`
@@ -90,12 +90,14 @@
       - `momsTypewriter.ttf`
     - `navbarStylesheet.css`
     - `stylesheet.css`
+    - `sudokuApp.css`
     - `uapStylesheet.css`
 - **[views]**
   - `.DS_Store`
   - `academic.ejs`
   - `apiAuthIndex.ejs`
   - `drums.ejs`
+  - `getGood.ejs`
   - `inProgress.ejs`
   - `index.ejs`
   - `military.ejs`
@@ -114,5 +116,6 @@
   - `pipeline.ejs`
   - `resume.ejs`
   - `sudoku.ejs`
+  - `sudokuApp.ejs`
   - `uap.ejs`
 <!-- END: contents list -->

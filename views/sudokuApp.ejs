@@ -2,7 +2,7 @@
 <%- include("partials/main/header.ejs") %>
 
 <div>
-<h1 class="pageTitle" data-value="Sudoku Solver">Sudoku Solver</h1>
+<h1 class="pageTitle" data-value="Sudoku Solver">The Solvificator</h1>
 <p class="more">You are able view and download the sudoku solver java file.</p>
 <p class="more">This java command line program is in the process of being</p>
 <p class="more">converted to a JS web app. Check back soon!</p>
@@ -10,17 +10,37 @@
 </div>
 
 <div class="more">
-<button id="viewSolver" class="custom-btn btn-2">View Sudoku Solver (Java)</button>
+<button id="viewSolver" class="custom-btn btn-2">View Sudoku Solver</button>
 <button id="downloadButton" class="custom-btn btn-2">Download Sudoku Solver Text File</button>
 </div>
 
-<% if(sudokuSolverContent){ %>
-    <div class="sudokuContainer">
-        <pre>
-        <%- sudokuSolverContent %>
-        </pre>
-    </div>
-<% } %>
+<div class="container">
+  <h1>Sudoku Solver</h1>
+  <div id="board-container">
+    <% const board = []; %>
+    <table id="sudoku-board">
+      <% for(let i = 0; i < 9; i++) { %>
+        <tr>
+          <% for(let j = 0; j < 9; j++) { %>
+            <td>
+              <!-- Render input with a prefilled value if board is passed from the server; if not, show an empty cell -->
+              <input type="text" maxlength="1" data-row="<%= i %>" data-col="<%= j %>" 
+                value="<%= board && board[i] && board[i][j] && board[i][j] !== 0 ? board[i][j] : '' %>">
+            </td>
+          <% } %>
+        </tr>
+      <% } %>
+    </table>
+  </div>
+  <div class="buttons">
+    <button id="solve-btn" class="custom-btn btn-2">Solve Puzzle</button>
+    <button id="generate-btn" class="custom-btn btn-2">Generate Puzzle</button>
+    <button id="hint-btn" class="custom-btn btn-2">Get Hint</button>
+    <button id="reset-btn" class="custom-btn btn-2">Reset Board</button>
+  </div>
+  <div id="message"></div>
+</div>
+<script src="/js/main.js"></script>
 <script>
     // View text file
     document.getElementById('viewSolver').addEventListener('click', function() {
