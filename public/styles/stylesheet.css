@@ -201,7 +201,7 @@ button {
     display: inline;
     font-weight: var(--fw-bold);
     color:#ffffff;
-    text-decoration: none;
+    text-decoration: underline;
     width: auto;
 }
 
