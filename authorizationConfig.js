@@ -1,5 +1,5 @@
 // yes, these are all exposed... these are not important or sensitive and are invalidated weekly
 export const username = "portfolio";
 export const password = "showMEtheSECRETS";
-export const apiKey = "e1b621d7-789e-4d09-87b0-b4872cd10d5e";
-export const bearerToken = "8ab3e91e-f493-4f3d-bacf-34d67f0bb411";
+export const apiKey = "4760fcf2-7a4b-49a8-bcea-d38bfbf9806c";
+export const bearerToken = "85c4fb1c-49ee-4767-99c8-a5e2cdecc0cd";
