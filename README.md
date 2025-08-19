@@ -88,6 +88,7 @@
       - `gelioPasteli.ttf`
       - `metal.ttf`
       - `momsTypewriter.ttf`
+    - `mtgCounter.css`
     - `navbarStylesheet.css`
     - `stylesheet.css`
     - `sudokuApp.css`
