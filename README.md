@@ -125,11 +125,11 @@
 
 - Card shuffle technique and distribution analysis tool
   - Analyze deck sizes up to 100 cards.
-  - Choose any combination of up to 4 shuffle techniques.
+  - Choose any combination of up to 4 shuffle techniques (overhand, pile, mash, riffle).
   - Choose how many iterations of each shuffle technique to perform.
-  - Option to label card types (for TCG players) and quantity of each.
-  - View card distribution over periods of shuffle types and iterations
-    and how the deck approches a near "complete randomization"
+  - Option to label card types and quantity of each.
+  - View card distribution over iterations of shuffle types and how the deck 
+    approches a near "complete randomization" through visual aids.
 
 - TCG (MTG) score and counter tracker web app.
   - Tracking app that allows for creating multiple private "game rooms"
