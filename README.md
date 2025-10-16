@@ -1,5 +1,5 @@
 # <img src="public/images/jbex05Orange.png" alt="Alt Text" width="50">
-# Portfolio Site 2023... and Beyond
+# Johnston-M
 
 
 ## What's Happening?
@@ -121,4 +121,20 @@
   - `uap.ejs`
 <!-- END: contents list -->
 
-- new test line
+### On the Way
+
+- Card shuffle technique and distribution analysis tool
+  - Analyze deck sizes up to 100 cards.
+  - Choose any combination of up to 4 shuffle techniques.
+  - Choose how many iterations of each shuffle technique to perform.
+  - Option to label card types (for TCG players) and quantity of each.
+  - View card distribution over periods of shuffle types and iterations
+    and how the deck approches a near "complete randomization"
+
+- TCG (MTG) score and counter tracker web app.
+  - Tracking app that allows for creating multiple private "game rooms"
+  - 1 host can create a password protected game room.
+  - Room holds up to 10 unique players.
+  - Each player controls their score and counters from their personal device (mobile phone, tablet, computer).
+  - Each player can view, as well as adjust, the scores and counters for all players.
+  - Game log available for players interested in reviewing game activity.
